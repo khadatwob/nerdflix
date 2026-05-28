@@ -1,0 +1,337 @@
+/* ========================= */
+/* ARCHIVO: style.css */
+/* ========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: black;
+    color: white;
+}
+
+/* HERO */
+
+.hero{
+    width: 100%;
+    height: 100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+    url('https://assets.nflxext.com/ffe/siteui/vlv3/9b1ecb7b-d0f7-4a37-b2df-c1f2de3c8a6d/0f45bfa6-6f4d-4f58-8b4e-37b14f6ec2f4/CO-es-20240520-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* NAVBAR */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 60px;
+}
+
+.logo{
+    width: 150px;
+}
+
+.nav-right{
+    display: flex;
+    gap: 15px;
+}
+
+.nav-right select{
+    padding: 8px 15px;
+    background: transparent;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.nav-right button{
+    background: #e50914;
+    color: white;
+    border: none;
+
+    padding: 8px 18px;
+    border-radius: 4px;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-right button:hover{
+    background: #c40812;
+}
+
+/* HERO CONTENT */
+
+.hero-content{
+    height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+.hero-content h1{
+    font-size: 4rem;
+    max-width: 700px;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.hero-content h3{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* EMAIL */
+
+.email-box{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.email-box input{
+    width: 380px;
+    padding: 18px;
+
+    background: rgba(0,0,0,0.6);
+
+    border: 1px solid gray;
+    border-radius: 5px;
+
+    color: white;
+    font-size: 1rem;
+}
+
+.email-box button{
+    background: #e50914;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 18px 30px;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.email-box button:hover{
+    background: #c40812;
+}
+
+/* SEPARATOR */
+
+.separator{
+    width: 100%;
+    height: 8px;
+    background: #232323;
+}
+
+/* SECTIONS */
+
+.section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 60px;
+
+    padding: 80px 10%;
+
+    flex-wrap: wrap;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+.text{
+    max-width: 500px;
+}
+
+.text h2{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.text p{
+    font-size: 1.5rem;
+}
+
+.section img{
+    width: 450px;
+}
+
+/* FAQ */
+
+.faq{
+    padding: 80px 12%;
+    text-align: center;
+}
+
+.faq h2{
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+.accordion{
+    margin-bottom: 10px;
+}
+
+.accordion input{
+    display: none;
+}
+
+.accordion label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #2d2d2d;
+
+    padding: 25px;
+
+    cursor: pointer;
+
+    font-size: 1.5rem;
+}
+
+.accordion label:hover{
+    background: #414141;
+}
+
+.accordion label::after{
+    content: '+';
+    font-size: 2rem;
+}
+
+.content{
+    max-height: 0;
+    overflow: hidden;
+
+    background: #2d2d2d;
+
+    text-align: left;
+
+    transition: 0.4s;
+}
+
+.content p{
+    padding: 25px;
+    font-size: 1.3rem;
+}
+
+.accordion input:checked ~ .content{
+    max-height: 300px;
+}
+
+.accordion input:checked + label::after{
+    content: '×';
+}
+
+/* FOOTER */
+
+footer{
+    padding: 60px 10%;
+    color: #b3b3b3;
+}
+
+.footer-links{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.footer-links a{
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.footer-links a:hover{
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .hero-content h1{
+        font-size: 2.5rem;
+    }
+
+    .hero-content h3{
+        font-size: 1.2rem;
+    }
+
+    .email-box{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .email-box input,
+    .email-box button{
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .navbar{
+        padding: 20px;
+    }
+
+    .logo{
+        width: 100px;
+    }
+
+    .text h2{
+        font-size: 2rem;
+    }
+
+    .text p{
+        font-size: 1.1rem;
+    }
+
+    .section img{
+        width: 100%;
+    }
+
+    .faq h2{
+        font-size: 2rem;
+    }
+
+    .accordion label{
+        font-size: 1.1rem;
+    }
+
+    .footer-links{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
